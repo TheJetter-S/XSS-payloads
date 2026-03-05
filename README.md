@@ -1,8 +1,8 @@
 # XSS-payloads
 Curated and categorized XSS payload repository with usage guides, PoC templates, Docker test environment, and automated CI — built for penetration testers, bug bounty hunters, and learners to safely practice and study Cross-Site Scripting attacks.
                           
-# XSS-payloads
-This repository is a collection of Awesome XSS resources. Contributions are welcome and should be submitted via an issue.
+# Note
+This repository is a collection of XSS-payloads resources. Contributions are welcome and should be submitted via an issue.
 
 ### Awesome contents
 - [Challenges](https://github.com/s0md3v/AwesomeXSS#awesome-challenges)
